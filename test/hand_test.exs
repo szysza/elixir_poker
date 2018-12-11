@@ -44,7 +44,7 @@ defmodule Poker.HandTest do
         ]
       }
 
-      assert Hand.validate_hand(hand) == {:error, hand, "Size of hand is 6, incorrect"}
+      assert Hand.validate_hand(hand) == {:error, hand, "Size of hand is 6"}
     end
 
     test "returns an error when there is not enough cards in hand1" do
@@ -54,7 +54,7 @@ defmodule Poker.HandTest do
 
     test "returns an error when there is not enough cards in hand" do
       hand = %Poker.Hand{cards: [{:A, :H, 14}, {:K, :D, 13}, {:J, :S, 11}, {:J, :C, 11}]}
-      assert Hand.validate_hand(hand) == {:error, hand, "Size of hand is 4, incorrect"}
+      assert Hand.validate_hand(hand) == {:error, hand, "Size of hand is 4"}
     end
 
     test "returns an error when a card occurs multiple times" do
